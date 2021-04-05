@@ -1,0 +1,250 @@
+%-------------------------
+% Resume in Latex
+% Author : Sourabh Bajaj
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1 }{ #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[6]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+      \textbf{#5} & #6  \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[label={},leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[label={}]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{{\Large Arkadeep Narayan Chaudhury}} & \underline{Email: \href{mailto:arkadeepnc@cmu.edu}{arkadeepnc@cmu.edu}} \\ 
+  \href{https://sites.google.com/site/arkadeepnchaudhury/}{Homepage} & Cell: +1 412-626-4231 \\
+  \href{https://www.linkedin.com/in/arkadeepnc/}{LinkedIn}, \href{https://github.com/arkadeepnc}{GitHub} &4225 Newell-Simon Hall, 5000 Forbes Avenue\\ \href{https://www.researchgate.net/profile/Arkadeep_Chaudhury}{ResearchGate} &  Carnegie Mellon University, Pittsburgh, PA, ZIP: 15232\\
+
+\end{tabular*}
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Carnegie Mellon University}{Pittsburg, PA}
+      {PhD in Computer Science (Robotics);  GPA: 4.00/ 4.00}{Aug. 2018 -- Now} {}{}
+      \vspace{-0.2 in}
+    \resumeSubheading
+      {Indian Institute of Science}{Bangalore, India}
+      {Master of Science in Mechanical Engineering;  GPA: 6.3/8.0}{Aug. 2015 -- Dec. 2017} {}{}
+       \vspace{-0.2 in}
+    \resumeSubheading
+      {Indian Institute of Engineering Science and Technology}{Shibpur, India}
+      {Bachelor of Engineering in Mechanical Engineering;  GPA: 8.58/10.00}{Jul. 2011 -- May 2015} {}{}
+       \vspace{-0.2 in}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Atkeson Lab \& Robotouch Lab, CMU RI}{Pittsburgh, PA}
+      {Graduate Research Assistant}{ Nov. 2019 -- Present} {Advisors:}
+          {Profs. Christopher Atkeson and Wenzhen Yuan}
+      \resumeItemListStart
+        \resumeItem{FingerVision II:}
+          {Developing FingerVision II -- a sensor and set of algorithms for tactile object recognition through local surface information. We aim to combine the best of two well known camera based tactile sensors -- GelSight and FingerVision.}
+        \resumeItemListEnd
+
+    \resumeSubheading
+      {CI2CV Lab, CMU RI}{Pittsburgh, PA}
+      {Graduate Research Assistant}{ Aug. 2019 -- Nov. 2019}  {Advisor:}
+          {Prof. Simon Lucey}
+      \resumeItemListStart
+        \resumeItem{Learning Based Registration:}
+          {Researched learning based algorithms for registration of human organ models.    A summary my work: \href{https://www.overleaf.com/read/jsjhbmspsjjq}{Link}.}
+        
+          \resumeItemListEnd
+    \resumeSubheading
+      {Biorobotics Lab, CMU RI}{Pittsburgh, PA}
+      {Graduate Research Assistant}{ Aug. 2018 - Jul. 2019}  {Advisor:}
+          {Prof. Howie Choset}
+      \resumeItemListStart
+        \resumeItem{Medical device prototype:}
+          {Co-developed and prototyped a hand held soft tissue investigation device for low-cost tumor diagnosis [publication 1].}
+      \resumeItem{Non-rigid registration:}
+          {Surveyed algorithms for human organ registration and proposed faster algorithms with comparable accuracy to handle larger volumes of data. \href{https://www.overleaf.com/read/ybdjnxzvtmwy}{Link}}
+        
+      \resumeItemListEnd
+  \resumeSubheading
+      {Robotics and Design Lab, IISc}{Bangalore, India}
+      {Research Staff}{ Jan. 2018 - Jul. 2018}  {Advisor:}
+          {Prof. Ashitava Ghosal}
+      \resumeItemListStart
+        \resumeItem{Optimal Motion Planning:}
+          {Derived optimal, polynomial time motion plans for snake-like robots in confined spaces such as endoscopes, pipe inspection robots and robots in cluttered search and rescue scenarios. [Publication 2]}
+        
+          \resumeItemListEnd
+  \resumeSubheading
+      {Robotics and Design Lab, IISc}{Bangalore, India}
+      {Graduate Research Assistant}{ Jul. 2015 - Dec. 2017}  {Advisor:}
+          {Prof. Ashitava Ghosal}
+      \resumeItemListStart
+        \resumeItem{Design of Parallel Robots:}
+          {Designed Monte Carlo simulations to model workspaces of parallel robots. Modeled the human 3-fingered grasp and proposed techniques for optimal design of parallel robots. [Publications 3 \& 4]  }
+        
+          \resumeItemListEnd
+\resumeSubheading
+      {Solid Mechanics Lab, IIEST}{ Shibpur, India}
+      {Undergraduate Researcher}{Jul. 2014 - Apr. 2015}  {Advisor:}
+          {Prof. Debasis Datta}
+      \resumeItemListStart
+        \resumeItem{Design of Springs:}
+          {Formulated closed form expressions for design of springs of un-conventional shapes to estimate their stresses, natural frequencies, buckling loads etc. [Publication 5]}
+       
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-- Projects
+\section{Selected Course Projects}
+\resumeSubHeadingListStart
+\resumeSubItem{Planning on Manifolds:}{ Devised algorithms for path planning of collaborative robot arms to manipulate ultra-sound probes on a human body phantom. The algorithm may be used to automate femoral artery catheterization. [\href{https://drive.google.com/file/d/1MkV6iC-KX0RYu9jkbsk1KcqY43s-AwOh/view?usp=sharing}{Video}] }
+\resumeSubItem{SLAM for Legged Robots:} {Used GTSAM and OpenCV to co-develop a framework for visual state estimation in legged robots using their gait information. [\href{https://drive.google.com/file/d/1IkJY9AmxFcWgnp1tYTT9mZcW5MmxTrkQ/view?usp=sharing}{Report}]}
+\resumeSubHeadingListEnd
+
+
+%-----------Publications-----------------
+\section{Selected Publications. \small{[\href{https://scholar.google.com/citations?user=rZ58Bf8AAAAJ&hl=en}{Google Scholar Page}}]}
+  \resumeSubHeadingListStart
+  
+    \resumeSubItem{[1]}
+      { Zodage T., \textbf{Chaudhury, A. N.}, Srivatsan, R.A.  Zevallos, N. \& Choset H. (2019) `` Hand held stiffness measuring device for preliminary tissue analysis.'' \emph{In proceedings of the Hamlyn Symposium for Medical robotics 2019} \href{https://www.researchgate.net/publication/333968217_Hand-held_stiffness_measurement_device_for_tissue_analysis}{Link}}
+      
+    \resumeSubItem{[2]}
+      {Ashwin K.P., \textbf{Chaudhury A.N.}, and Ashitava Ghosal. (2020) ``Efficient representation of ducts and cluttered spaces for realistic motion planning of hyper-redundant robots through confined paths.''J. Computer-Aided Design, 119, 102777. \href{https://www.sciencedirect.com/science/article/pii/S0010448518304135}{Link}}
+      
+    \resumeSubItem{[3]}
+      { \textbf{Chaudhury, A. N.}, \& Ghosal, A. (2017). ``Optimum design of multi-degree-of-freedom closed-loop mechanisms and parallel manipulators for a prescribed workspace using Monte Carlo method''. Mechanism and Machine Theory, 118, 115-138.  \href{https://www.sciencedirect.com/science/article/abs/pii/S0094114X16303184}{Link}}
+      
+  \resumeSubItem{[4]}
+  {\textbf{Chaudhury, A. N.}, \& Ghosal, A. (2018). ``Workspace of Multi-fingered Hands Using Monte Carlo Method''. Journal of Mechanisms and Robotics, 10(4), 041003. \href{https://asmedigitalcollection.asme.org/mechanismsrobotics/article-abstract/10/4/041003/366587/Workspace-of-Multifingered-Hands-Using-Monte-Carlo?redirectedFrom=fulltext}{ Link}}
+  
+  \resumeSubItem{[5]}
+  {\textbf{Chaudhury, A. N.}, \& Datta, D. (2017). ``Analysis of prismatic springs of non-circular coil shape and non-prismatic springs of circular coil shape by analytical and finite element methods''. Journal of Computational Design and Engineering, 4(3), 178-191.
+\href{https://www.sciencedirect.com/science/article/pii/S2288430016301385}{Link}}
+\resumeSubHeadingListEnd
+
+%-----------------------
+
+\section{Skills}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Programming Languages:}      {Python and C++ }
+    \resumeSubItem{Modelling Tools:}       {Matlab, Maple (Symbolic Mathematics)}
+    \resumeSubItem{Computing Environments:} {Windows, Ubuntu }
+    \resumeSubItem{Machine Learning Toolboxes:} {PyTorch, TensorFlow, SciKit-Learn}
+    \resumeSubItem{Software Libraries:}{ROS, OpenCV, PCL, GTSAM}
+    \resumeSubItem{Languages:}  {English (full proficiency), Bengali (native profiiciency) and Hindi (bi-lingual proficiency)}
+\resumeSubHeadingListEnd
+%----------
+
+\section{Relevant Courses}
+  \resumeSubHeadingListStart
+    \resumeSubItem{At CMU:}      {Computer Vision (16-720),  Advanced Nonlinear Control Theory (16-748), Robot Localization (16-833), Geometric Methods in Computer Vision (16-822), Linear Systems (18-771), Statistical Techniques in Robotics (16-831), Deep Reinforcement Learning (10-703), Machine Learning (10-701)}
+    \resumeSubItem{At IISc:}       {Robotics (Kinematics, Dynamics and Control), Numerical Linear Algebra, Geometric Modelling, Linear and Non-Linear Optimization, }
+\resumeSubHeadingListEnd
+
+%---
+\section{Awards}
+\begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+		DST-SERB Overseas PhD fellowship [Declined] & 08/2018 -- 08/2023 \\
+		Graduate Research Fellowship (CMU) & 08/2018 -- 08/2019 \\
+		DST Graduate Scholarship (at IISc) & 08/2015 -- 12/2017\\		
+\end{tabular*}
+
+
+%-----------------
+\section{Interests}
+\begin{description}
+\item[Academic:] Tactile sensing and object recognition, Computational geometry, 3D Surface modelling.
+\vspace{-0.1 in}
+\item[Sports:] Biking and badminton.
+\end{description}
+
+
+%-------------
+
+\section{References}
+\begin{description}
+\item[Dr. Christopher Atkeson] Professor, CMU, \href{mailto:cga@cmu.edu}{cga@cmu.edu} [advisor]
+\vspace{-0.1 in}
+% \item [Dr. Simon Lucey] Associate Research Professor, CMU, \href{mailto:slucey@cmu.edu}{slucey@cmu.edu}
+% \vspace{-0.1 in}
+\item[Dr. Ashitava Ghosal] Professor, IISc Bangalore.  \href{mailto:asitava@iisc.ac.in}{asitava@iisc.ac.in} [ex. advisor]
+\vspace{-0.1 in}
+\item[Dr. Wenzhen Yuan] Assistant Professor, CMU RI, \href{mailto:yuanwz@cmu.edu}{yuanwz@cmu.edu} [collaborator]
+\end{description}
+
+%-------------------------------------------
+\end{document}

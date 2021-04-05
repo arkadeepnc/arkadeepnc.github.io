@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <table style="width:100%;max-width:1000px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
     <tr style="padding:0px">
       <td style="padding:0px">
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
@@ -20,14 +20,14 @@
               <p style="text-align:center">
                 <name>Arkadeep Narayan Chaudhury</name>
               </p>
-              <p>I am a graduate student at <a href="https://cmu.edu">Carnegie Mellon University</a>, pursuing a PhD in Robotics at the <a href="https://www.ri.cmu.edu/">Robotics Institute</a>. I am advised by <a href="http://www.cs.cmu.edu/~cga/">Prof. Chris Atkeson</a> and collaborate closely with <a href="http://robotouch.ri.cmu.edu/yuanwz/">Prof. Wenshen Yuan</a>. My current research interests include tactile sensing, sensor fusion and multimodal sensing for robotic manipulation. You can call me Arka. Pronounced as Orco, just like the whale but ending with an 'O'.
+              <p>I am a graduate student at <a href="https://cmu.edu">Carnegie Mellon University</a>, pursuing a PhD in Robotics at the <a href="https://www.ri.cmu.edu/">Robotics Institute</a>. I am advised by <a href="http://www.cs.cmu.edu/~cga/">Prof. Chris Atkeson</a> and collaborate closely with <a href="http://robotouch.ri.cmu.edu/yuanwz/">Prof. Wenshen Yuan</a>. My current research interests include tactile sensing, sensor fusion and multimodal sensing for robotic manipulation. 
               </p>
               <p>
                 Prior to that I was a graduate student and then a project staff in the Robotics and Design lab at the department of Mechanical Engineering, IISc Bangalore with <a href="https://mecheng.iisc.ac.in/~asitava/">Prof. Ashitava Ghosal</a>. I earned my MSc (Engg.) degree  at the department of <a href="https://mecheng.iisc.ac.in/">Mechanical Engineering</a>  at <a href="https://www.iisc.ac.in/">Indian Institute of Science Bangalore</a>  while working with Prof. Ashitava Ghosal on manipulator design. I graduated from the <a href="http://www.iiests.ac.in/ ">Indian Institute of Engineering Science and Technology, Shibpur</a>  with a B.E. degree in Mechanical Engineering in first class with highest honors. For my undergraduate thesis I worked with <a href="https://www.iiests.ac.in/IIEST/Faculty/mech-ddatta">Prof. Debasis Datta.</a>  
               </p>
               <p style="text-align:center">
                 <a href="mailto:arkadeepnc@cmu.edu">Email</a> &nbsp/&nbsp
-                <a href="https://www.overleaf.com/read/mdwmfpbwsryk">CV</a> &nbsp/&nbsp
+                <a href="Resume/resume.pdf">CV</a> &nbsp/&nbsp
                 <!-- <a href="data/JonBarron-bio.txt">Bio</a> &nbsp/&nbsp -->
                 <a href="https://scholar.google.com/citations?user=rZ58Bf8AAAAJ&hl=en">Google Scholar</a> &nbsp/&nbsp
                 <a href="https://www.linkedin.com/in/arkadeepnc/">LinkedIn</a> &nbsp/&nbsp
@@ -36,7 +36,7 @@
               </p>
             </td>
             <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/JonBarron.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/Arka_recent_img.jpg" class="hoverZoomLink"></a>
+              <a href="images/Arka_recent_img.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/Arka_recent_img.jpg" class="hoverZoomLink"></a>
             </td>
           </tr>
         </tbody></table>
@@ -52,50 +52,54 @@
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr onmouseout="collocated_vision_stop()" onmouseover="collocated_vision_start()">
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id='collocated_vision_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/collocated_vision.png" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                  <img src='images/collocated_vision.png' width="160">
+                </div>
+                <script type="text/javascript">
+                  function collocated_vision_start() {
+                    document.getElementById('collocated_vision_image').style.opacity = "1";
+                  }
+  
+                  function collocated_vision_stop() {
+                    document.getElementById('collocated_vision_image').style.opacity = "0";
+                  }
+                  CAD_paper_stop()
+                </script>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle">
+                <a href="">
+                <papertitle> [Work In Progress] Using collocated vision to improve tactile sensing  </papertitle>
+                </a>
+                <br>
+                <strong>Arkadeep Narayan Chaudhury </strong>,
+                <a href=""> Timothy Man</a>, 
+                <a href=""> Wenzhen Yuan</a>, 
+                <a href=""> Chris Atkeson</a>
+                <br>
+                <em>Work in progress </em> 
+                <br>
+                <a href="">Paper</a>
+                /
+                <a href="">Video </a>
+                /
+                <a href=""> Code </a>
+                /
+                <a href=""> Paper Website </a>
+                <p></p>
+                
+                <p>  In this  work  we  make  the  point  that  coordinating  tactile  sensingwith  vision  by  a  co-located  camera  instead  of  only  consideringthe tactile sensor inputs alone can a) provide useful informationin  advance  of  contact  and  b)  simplify  the  contact  point  andpose estimation problem.
+                </p>
+              </td>
 
-          <tr onmouseout="nerfbake_stop()" onmouseover="nerfbake_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='nerfbake_image'><video  width=100% height=100% muted autoplay loop>
-                <source src="images/nerfbake_15.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='images/nerfbake_160.png' width="160">
-              </div>
-              <script type="text/javascript">
-                function nerfbake_start() {
-                  document.getElementById('nerfbake_image').style.opacity = "1";
-                }
 
-                function nerfbake_stop() {
-                  document.getElementById('nerfbake_image').style.opacity = "0";
-                }
-                nerfbake_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="http://nerf.live">
-              <papertitle>Baking Neural Radiance Fields for Real-Time View Synthesis</papertitle>
-              </a>
-              <br>
-              <a href="https://phogzone.com/">Peter Hedman</a>,
-              <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>,
-              <a href="https://bmild.github.io/">Ben Mildenhall</a>,
-              <strong>Jonathan T. Barron</strong>,
-              <a href="https://www.pauldebevec.com/">Paul Debevec</a>
-              <br>
-              <em>arXiv</em>, 2021 
-              <br>
-              <a href="http://nerf.live">project page</a>
-              /
-              <a href="https://arxiv.org/abs/2103.14645">arXiv</a>
-              /
-              <a href="https://www.youtube.com/watch?v=5jKry8n5YO8">video</a>
-              /
-              <a href="https://nerf.live/#demos">demo</a>
-              <p></p>
-              <p>Baking a trained NeRF into a sparse voxel grid of colors and features lets you render it in real-time in your browser.</p>
-            </td>
+
         </tbody></table>
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
@@ -103,12 +107,44 @@
           <td style="padding:20px;width:100%;vertical-align:middle">
             <heading>Previous Research</heading>
             <p>
-            In the past I have worked on  design of mechanical components and parallel robots. I hame also done some research on modelling the human 3 fingered grasp and on optimal motion planning through constrained spaces. 
+            In the past I have worked on medical robotics, design of mechanical components and parallel robots. I hame also done some research on modelling the human 3 fingered grasp and on optimal motion planning through constrained spaces. 
             </p>
           </td>
         </tr>
       </tbody></table>
       <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+
+          <tr onmouseout="hand_design_stop()" onmouseover="hand_design_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <!-- <div class="two" id='parallem_manip_mc_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="images/parallem_manip_mc_15.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div> -->
+                <img src='images/hamlyn_paper.png' width="210", height="150">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://www.researchgate.net/publication/333968217_Hand-held_stiffness_measurement_device_for_tissue_analysis">
+              <papertitle>Hand-held stiffness measurement device for tissue analysis</papertitle>
+              </a>
+              <br>
+              Tejas A. Zodage, 
+              <strong>Arkadeep Narayan Chaudhury</strong>,
+              Arun Srivatsan Rangaprasad, Nicolas Zevallos, Howie Choset
+              <br>
+              <em>Hamlyn Symposium on Medical Rootics</em>, 2019
+              <br>
+              <a href="https://www.researchgate.net/publication/333968217_Hand-held_stiffness_measurement_device_for_tissue_analysis">Paper</a> 
+              /
+              <a href="https://github.com/arkadeepnc/Visual-6-DoF-pose-tracker"    > Code</a>                      
+              <p></p>
+              <p> In this short paper, we describe a new method to generate stiffness maps for soft tissues by fusing a stand alone optical tracking system with an off-the-shelf force sensor. </p>
+            </td>
+
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
@@ -168,7 +204,7 @@
               <source src="images/parallem_manip_mc_15.mp4" type="video/mp4">
               Your browser does not support the video tag.
               </video></div> -->
-              <img src='images/MMT_paper.png' width="250">
+              <img src='images/MMT_paper.png' width="200">
             </div>
           </td>
           <td style="padding:20px;width:75%;vertical-align:middle">
@@ -197,7 +233,7 @@
                 <source src="images/parallem_manip_mc_15.mp4" type="video/mp4">
                 Your browser does not support the video tag.
                 </video></div> -->
-                <img src='images/JMR_paper.png' width="580", height="860">
+                <img src='images/JMR_paper.png' width="180", height="200">
               </div>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
@@ -222,7 +258,7 @@
                   <source src="images/parallem_manip_mc_15.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                   </video></div> -->
-                  <img src='images/JCDE_paper.png' width="580", height="860">
+                  <img src='images/JCDE_paper.png' width="180", height="200">
                 </div>
               </td>
               <td style="padding:20px;width:75%;vertical-align:middle">
