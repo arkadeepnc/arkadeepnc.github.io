@@ -5,13 +5,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <html>
 <head>
-<title>Mathedemo</title>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-</script>
-<script type="text/javascript"
-    src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
@@ -191,9 +188,9 @@
                     Correcting trajectory errors with POE estimates
                 </h3>
                 <p class="text-justify">
-                    Let us denote the true workspace goal as $\mathbf{X}_G^W$ and it's estimate $\widehat{\mathbf{X}_G^W}$ in homogeneous 3 space. The robot is initially planned to move to $\widehat{\mathbf{X}_G^W}$ and let the POEs obtained for the subsequent frames be $\mathbf{p}$, in the pixel space. As the camera is registered to the robot, a given point in time, we can calculate the world to camera projection matrix as $\mathbf{P} = \mathbf{K}[\mathbf{R}_{world}^{cam}|\mathbf{t}_{world}^{cam}]$
-                    and can project $\mathbf{X}_G^W$ and it's estimate $\widehat{\mathbf{X}_G^W}$ to $\mathbf{x}_G$ and $\widehat{\mathbf{x}_G}$ in homogeneous 2 space. If the motion between two frames captured by the camera-in-hand is mostly perpendicular to the imaging plane, we can approximate $\widehat{\mathbf{x}_G}$ with the point of expansion $\mathbf{p}$ for each subsequent frames. We also note that, as $\mathbf{p}$ is in the pixel space, with this approximation, we discard the "z-buffer" of the projective transformations associated with $\mathbf{x}_G$ and as a consequence, cannot correct for a error in the camera's projective axis (camera's Z axis). We  use the camera projection Jacobian and calculate the task-space error as below: 
-                    \begin{align}\label{eq:trajectory_corretion}
+                    Let us denote the true workspace goal as \(\mathbf{X}_G^W \) and it's estimate \(\widehat{\mathbf{X}_G^W} \) in homogeneous 3 space. The robot is initially planned to move to \(\widehat{\mathbf{X}_G^W}\) and let the POEs obtained for the subsequent frames be \(\mathbf{p}\), in the pixel space. As the camera is registered to the robot, a given point in time, we can calculate the world to camera projection matrix as \(\mathbf{P} = \mathbf{K}[\mathbf{R}_{world}^{cam}|\mathbf{t}_{world}^{cam}]\)
+                    and can project \(\mathbf{X}_G^W\) and it's estimate \(\widehat{\mathbf{X}_G^W}\) to \(\mathbf{x}_G\) and \(\widehat{\mathbf{x}_G}\) in homogeneous 2 space. If the motion between two frames captured by the camera-in-hand is mostly perpendicular to the imaging plane, we can approximate \(\widehat{\mathbf{x}_G}\) with the point of expansion \(\mathbf{p}\) for each subsequent frames. We also note that, as \(\mathbf{p}\) is in the pixel space, with this approximation, we discard the "z-buffer" of the projective transformations associated with \(\mathbf{x}_G\) and as a consequence, cannot correct for a error in the camera's projective axis (camera's Z axis). We  use the camera projection Jacobian and calculate the task-space error as below: 
+                    $$
                     \Delta\mathbf{X} = \left[\begin{array}{ccc}
                         \frac{f_x}{Z_W} & 0 & -\frac{X^W_G f_x+Z^W_G c_x}{{Z^W_G}^2}+\frac{c_x}{Z^W_G} \\
                         0 & \frac{f_y}{Z^W_G} & -\frac{Y^W_G f_y+Z^W_G c_y}{{Z^W_G}^2}+\frac{y}{Z^W_G}
@@ -201,8 +198,8 @@
                     p^u -   \mathbf{x}_G^u   \\
                     p^v - \mathbf{x}_G^v
                     \end{array} \right]
-                    \end{align}
-                    In the equation above, $[f_x, f_y, c_x, c_y]$ are the camera intrinsics, and we denote $\mathbf{X}_G^W = [X^W_G, Y^W_G, Z^W_G]$ and the $[\cdot]^+$ denotes the Moore-Penrose pseudo-inverse. We use the following procedure to correct trajectory goals as the robot moves towards the true workspace goal $\mathbf{X}_G^W$ with a erroneous initial estimate.  
+                    $$
+                    In the equation above, \([f_x, f_y, c_x, c_y]\) are the camera intrinsics, and we denote \(\mathbf{X}_G^W = [X^W_G, Y^W_G, Z^W_G]\) and the \([\cdot]^+\) denotes the Moore-Penrose pseudo-inverse. We use the following procedure to correct trajectory goals as the robot moves towards the true workspace goal \(\mathbf{X}_G^W\) with a erroneous initial estimate.  
                 </p>              
 
 
