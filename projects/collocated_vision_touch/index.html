@@ -76,25 +76,25 @@
             <div class="col-md-12 text-center">
                 <ul class="list-inline">
                     <li>
-                        <a href="https://jonbarron.info/">
+                        <a href="https://arkadeepnc.github.io/">
                           Arkadeep Narayan Chaudhury
                         </a>
                         </br>CMU RI
                     </li>
                     <li>
-                        <a href="http://bmild.github.io/">
+                        <a href="">
                             Tim Man
                         </a>
                         </br>CMU RI
                     </li>
                     <li>
-                        <a href="http://matthewtancik.com/">
+                        <a href="http://robotouch.ri.cmu.edu/yuanwz/">
                           Wenzhen Yuan
                         </a>
                         </br>CMU RI
                     </li><br>
                     <li>
-                        <a href="https://phogzone.com/">
+                        <a href="http://www.cs.cmu.edu/~cga/">
                           Chris Atkeson
                         </a>
                         </br>CMU RI
@@ -114,7 +114,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="https://youtu.be/GwIF3bNlPnw">
                             <image src="img/youtube_icon.png" height="60px">
                                 <h4><strong>Video</strong></h4>
                             </a>
@@ -123,6 +123,7 @@
                             <a href="">
                             <image src="img/github.png" height="60px">
                                 <h4><strong>Code</strong></h4>
+                                <h4><small>Coming soon... </small> </h4>
                             </a>
                         </li> 
                     </ul>
@@ -134,9 +135,17 @@
                 <h3>
                     Abstract
                 </h3>
-                <image src="img/rays.png" class="img-responsive" alt="overview"><br>
+                <image src="img/opening_fig.png" class="img-responsive" alt="overview"><br>
                 <p class="text-justify">
-                    A key step in manipulation is estimating the points of contact and  pose of an object with  respect to the robot. In this work we make the point that coordinating tactile sensing with  vision by collocated cameras (instead of only considering the tactile  sensor inputs alone) can 1) provide useful information before contact and 2) simplify the contact point and pose estimation problem. We divide the problem of contact pose estimation into two parts -- the initial phase where the end effector is not in contact with the object and the final phase when the end effector is in contact. We leverage the natural scopes of the cameras and the tactile sensor to visually servo towards the object and obtain a coarse pose estimate of the object with respect to the end effector and refine that estimate to localize the contact using the data obtained from the tactile sensor. Using our ensemble of collocated tactile and visual sensors, we localize contact for objects of a variety of sizes, disambiguate between confusing tactile signals when used for localization, use the optic flow observed by the end effector mounted cameras to generate statistically significant estimates of the direction of heading of the robot and use it to correct robot trajectory errors.
+                    Coordinating proximity and tactile imaging by collocating cameras with tactile sensors can 1) provide useful information before contact such as object pose estimates and visually servo a robot
+                    to a target with reduced occlusion and higher resolution compared to head-mounted or external depth cameras,
+                     2) simplify the contact point and pose estimation problems and help tactile sensing avoid erroneous matches when
+                    a surface does not have significant texture or has repetitive texture with many possible matches, and 3) use tactile imaging to further refine contact point and object pose estimation.
+                   We demonstrate our results  with objects that have more surface texture than most objects in standard manipulation datasets. 
+                  We learn that optic flow needs to be integrated over a substantial amount of camera travel to be useful in predicting movement direction. Most importantly, we also learn that state of the art vision algorithms
+                  do not do a good job localizing tactile images
+                  on object models, unless a reasonable prior can be
+                  provided from collocated cameras.
                 </p>
             </div>
         </div>
@@ -150,7 +159,7 @@
                 </h3>
                 <div class="text-center">
                     <div style="position:relative;padding-top:56.25%;">
-                        <iframe src="https://www.youtube.com/embed/EpH175PY1A0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                        <iframe src="https://www.youtube.com/embed/GwIF3bNlPnw" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                     </div>
                 </div>
             </div>
@@ -204,89 +213,7 @@
 
 
             </div>
-        </div>
-        
-        
-
-
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Mip-NeRF
-                </h3>
-                <p class="text-justify">
-                    We use integrated positional encoding to train NeRF to generate anti-aliased renderings. Rather than casting an infinitesimal ray through each pixel, we instead cast a full 3D <em>cone</em>. For each queried point along a ray, we consider its associated 3D conical frustum. Two different cameras viewing the same point in space may result in vastly different conical frustums, as illustrated here in 2D:
-                </p>
-                <p style="text-align:center;">
-                    <image src="img/scales_toy.png" class="img-responsive" alt="scales">
-                </p>
-                <p class="text-justify">
-                    In order to pass this information through the NeRF network, we fit a multivariate Gaussian to the conical frustum and use the integrated positional encoding described above to create the input feature vector to the network. 
-                </p>
-            </div>
-        </div>
-            
-
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Results
-                </h3>
-                <p class="text-justify">
-                    We train NeRF and mip-NeRF on a dataset with images at four different resolutions. Normal NeRF (left) is not capable of learning to represent the same scene at multiple levels of detail, with blurring in close-up shots and aliasing in low resolution views, while mip-NeRF (right) both preserves sharp details in close-ups and correctly renders the zoomed-out images.
-                </p>                
-                <br>
-                <video id="v0" width="100%" autoplay loop muted controls>
-                  <source src="img/ship_sbs_path1.mp4" type="video/mp4" />
-                </video>
-                <video id="v0" width="100%" autoplay loop muted controls>
-                  <source src="img/chair_sbs_path1.mp4" type="video/mp4" />
-                </video>
-                <video id="v0" width="100%" autoplay loop muted controls>
-                  <source src="img/lego_sbs_path1.mp4" type="video/mp4" />
-                </video>
-                <video id="v0" width="100%" autoplay loop muted controls>
-                  <source src="img/mic_sbs_path1.mp4" type="video/mp4" />
-                </video>
-                <br><br>
-                <p class="text-justify">
-                    We can also manipulate the integrated positional encoding by using a larger or smaller radius than the true pixel footprint, exposing the continuous level of detail learned within a single network:
-                </p>     
-                <video id="v0" width="100%" autoplay loop muted controls>
-                  <source src="img/lego_radii_manip_slider_200p.mp4" type="video/mp4" />
-                </video>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Related links
-                </h3>
-                <p class="text-justify">
-                    <a href="https://en.wikipedia.org/wiki/Spatial_anti-aliasing">Wikipedia</a> provides an excellent introduction to spatial anti-aliasing techniques.
-                </p>
-                <p class="text-justify">
-                    Mipmaps were introduced by Lance Williams in his paper "Pyramidal Parametrics" (<a href="https://software.intel.com/sites/default/files/m/7/2/c/p1-williams.pdf">Williams (1983)</a>).
-                </p>
-                <p class="text-justify">
-                    <a href="https://dl.acm.org/doi/abs/10.1145/964965.808589">Amanatides (1984)</a> first proposed the idea of replacing rays with cones in computer graphics rendering. 
-                </p>
-                <p class="text-justify">
-                    The closely related concept of <em>ray differentials</em> (<a href="https://graphics.stanford.edu/papers/trd/">Igehy (1999)</a>) is used in most modern renderers to antialias textures and other material buffers during ray tracing.
-                </p>
-                <p class="text-justify">
-                    Cone tracing has been used along with prefiltered voxel-based representations of scene geometry for speeding up indirect illumination calculations in <a href="https://research.nvidia.com/sites/default/files/publications/GIVoxels-pg2011-authors.pdf">Crassin et al. (2011)</a>.
-                </p>
-                <p class="text-justify">
-                    Mip-NeRF was implemented on top of the <a href="https://github.com/google-research/google-research/tree/master/jaxnerf">JAXNeRF</a> codebase.
-                </p>
-            </div>
-        </div>
-        
+        </div> 
             
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -301,7 +228,7 @@ TBD</textarea>
         </div>
 
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-8 col-md-offset-1">
                 <h3>
                     Acknowledgements
                 </h3>
