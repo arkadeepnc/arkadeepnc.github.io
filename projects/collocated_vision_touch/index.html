@@ -26,20 +26,20 @@
     <!-- <base href="/"> -->
 
         <!--FACEBOOK-->
-    <meta property="og:image" content="https://jonbarron.info/mipnerf/img/rays_square.png">
+    <!-- <meta property="og:image" content="https://jonbarron.info/mipnerf/img/rays_square.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="682">
     <meta property="og:image:height" content="682">
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://jonbarron.info/mipnerf/"/>
     <meta property="og:title" content="mip-NeRF" />
-    <meta property="og:description" content="Project page for Mip-NeRF: A Multiscale Representation for Anti-Aliasing Neural Radiance Fields." />
+    <meta property="og:description" content="Project page for Mip-NeRF: A Multiscale Representation for Anti-Aliasing Neural Radiance Fields." /> -->
 
         <!--TWITTER-->
-    <meta name="twitter:card" content="summary_large_image" />
+    <!-- <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="mip-NeRF" />
     <meta name="twitter:description" content="Project page for Mip-NeRF: A Multiscale Representation for Anti-Aliasing Neural Radiance Fields." />
-    <meta name="twitter:image" content="https://jonbarron.info/mipnerf/img/rays_square.png" />
+    <meta name="twitter:image" content="https://jonbarron.info/mipnerf/img/rays_square.png" /> -->
 
 
 <!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
@@ -108,7 +108,7 @@
                 <div class="col-md-4 col-md-offset-4 text-center">
                     <ul class="nav nav-pills nav-justified">
                         <li>
-                            <a href="./img/ICRA_RAL_Formatted-compressed.pdf">
+                            <a href="./img/ICRA_RAL_Formatted_REVISED_V2-compressed.pdf">
                             <image src="img/mip_paper_image.jpg" height="60px">
                                 <h4><strong>Paper</strong></h4>
                             </a>
@@ -209,7 +209,20 @@
                     \end{array} \right]
                     $$
                     In the equation above, \([f_x, f_y, c_x, c_y]\) are the camera intrinsics, and we denote \(\mathbf{X}_G^W = [X^W_G, Y^W_G, Z^W_G]\) and the \([\cdot]^+\) denotes the Moore-Penrose pseudo-inverse. We use the following procedure to correct trajectory goals as the robot moves towards the true workspace goal \(\mathbf{X}_G^W\) with a erroneous initial estimate.  
-                </p>       
+                </p>   
+                
+                <h3>
+                    Empirical evidence of error averaging across 10 cm steps
+                </h3>
+
+                <p class="text-justify">
+                    <p style="text-align:center;">
+                        <image src="./img/all_POEs.png" height="40px" class="img-responsive">
+                </p>
+                </p>
+                <p class="text-justify">
+                    In this experiment, we move the robot vertically down by 65 cm to a goal location slightly below the yellow cross mark on the handle of the glue gun. There are no errors in the goal location being tracked for this case. This experiment is repeated 10 times. The red dots are the predictions of potential point of contact (calculated as the instantaneous POE). We note that the predictions are centered about the actual point of contact -- a point slightly below the yellow cross mark on the glue gun. We report 6 cases where we predict the  potential point of contact by looking at various intervals of the trajectory. We report the interval lengths (in cm) and the standard deviation in predicting the point of contact (in pixels) as the labels of the figures. We note that as we increase the length of the interval, the standard deviation of the prediction decreases (as seen through ``clumping" of the predicted potential points of contact), but the number of possible predictions decreases (as seen through fewer number of red dots with increasing interval sizes). This leads us to conclude that the averages across larger temporal (and spatial) windows produce smoother and more stable error signals (or correction signals in the case of visual servoing). For our use case, averaging across 10 cm intervals provided us with ``enough'' number of correction signals while having reasonably low variance.
+                </p> 
             </div>
         </div> 
 
@@ -224,11 +237,33 @@
                 <p class="text-justify">
                     We used the following objects for our localization experiments. From top (L-R) a folding knife, a glue gun, a wooden clip, a monkey from the Barrel of Monkey's game, a circuit board, a box cutter and a textured metallic pin. A 10cm \(\times\) 1cm rectangle is inserted at the bottom for scale.
                 </p>
+                <p style="text-align:center;">
+                 <image src="./img/repeated_expt_table.png" height="50px" class="img-responsive">
+                 </p>
                 <p class = "text-justify">
-                    We 
-                </p>
-               <p style="text-align:center;">
-                <image src="./img/repeated_expt_table.png" height="50px" class="img-responsive">
+                    We focus on the case where the contact point has a unique arrangement of useful tactile features. This is the best case for a combined approach. If the tactile sensor contacts a featureless area, that can  be detected and the tactile sensor output can be ignored. For each of the 6 objects used in this work, we fix the object to the robot table. Assuming that there is zero error in position control of our robot (we use a Universal Robots UR5E manipulator fixed to a vention.io
+                    table of recommended design for the same robot), we register the object with respect to the robot base and treat this pose as our ground truth. Next, we move the robot vertically 1 m above the object and move the robot down to touch the object at a chosen point that will yield good tactile information, and
+                    localize the object with respect to the robot. We repeat this 3
+                    times for the same object positions and repeat this experiment
+                    for 2 more positions of the object with respect to the robot --
+                    i.e. localizing each object 9 times with respect to the robot.
+                    Fixing the objects is a restrictive assumption in the context of
+                    localizing objects especially with touch, however, to ensure
+                    repeatability of the experiments reported in the section, we
+                    had to fix the objects to a rigid base. Following recent literature
+                    we report the repeatibility of our pose estimation pipeline as
+                    the measure of its performance.
+                    Using tactile sensing the localization errors were brought
+                    down to ±1.5mm in translation and ±0.\(5^o\) in rotation from
+                    about 1.5cm in translation and 2\(^o\) in rotation using only
+                    vision 3 . However, for cases where the tactile features were
+                    not unique, e.g. the box cutter teeth and the metallic slender pin
+                    object, the tactile sensing actually increased the
+                    localization errors in the horizontal directions. The order
+                    of these errors were equivalent to the scale of the repeated
+                    features -- 5mm for the box-cutter (teeth are about 3mm wide placed in intervals of
+                    5mm) and about 2mm for the long textured metallic pin (the embossed features are very similar at intervals of 3.5 mm). This observation is consistent with the fact that the
+                    final gradient descent step  to refine the camera based pose estimates will converge to the wrong local minima if the tactile measurements are not distinctive enough. 
                 </p>
                 <p style="text-align:center;">
                     <image src="./img/small_flat_obj.png" height="35px" class="img-responsive">
@@ -236,13 +271,6 @@
                 <p style="text-align:center;">
                     <image src="./img/big_objs.png" height="35px" class="img-responsive">
                 </p>
-                <h3>
-                    Correcting trajectory errors with POE estimates
-                </h3>
-                <p class="text-justify">
-                   
-                </p>              
-
 
             </div>
         </div> 
