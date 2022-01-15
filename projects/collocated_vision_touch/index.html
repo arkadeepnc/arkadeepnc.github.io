@@ -108,11 +108,18 @@
                 <div class="col-md-4 col-md-offset-4 text-center">
                     <ul class="nav nav-pills nav-justified">
                         <li>
-                            <a href="./img/ICRA_RAL_Formatted_REVISED_V2-compressed.pdf">
+                            <a href="./img/ICRA_RAL_Formatted_REVISED_V3-compressed.pdf">
                             <image src="img/mip_paper_image.jpg" height="60px">
                                 <h4><strong>Paper</strong></h4>
                             </a>
                         </li>
+                        <li>
+                            <a href="./img/ICRA_RAL_reviewer_responses_compressed.pdf">
+                            <image src="img/mip_paper_image.jpg" height="60px">
+                                <h4><strong>Reviews</strong></h4>
+                                <!-- <h4><small>Coming soon... </small> </h4> -->
+                            </a>
+                        </li> 
                         <li>
                             <a href="https://youtu.be/GwIF3bNlPnw">
                             <image src="img/youtube_icon.png" height="60px">
@@ -241,7 +248,7 @@
                  <image src="./img/repeated_expt_table.png" height="50px" class="img-responsive">
                  </p>
                 <p class = "text-justify">
-                    We focus on the case where the contact point has a unique arrangement of useful tactile features. This is the best case for a combined approach. If the tactile sensor contacts a featureless area, that can  be detected and the tactile sensor output can be ignored. For each of the 6 objects used in this work, we fix the object to the robot table. Assuming that there is zero error in position control of our robot (we use a Universal Robots UR5E manipulator fixed to a vention.io
+                    In the experiment above, we focus on the case where the contact point has a unique arrangement of useful tactile features. This is the best case for a combined approach. If the tactile sensor contacts a featureless area, that can  be detected and the tactile sensor output can be ignored. For each of the 6 objects used in this work, we fix the object to the robot table. Assuming that there is zero error in position control of our robot (we use a Universal Robots UR5E manipulator fixed to a vention.io
                     table of recommended design for the same robot), we register the object with respect to the robot base and treat this pose as our ground truth. Next, we move the robot vertically 1 m above the object and move the robot down to touch the object at a chosen point that will yield good tactile information, and
                     localize the object with respect to the robot. We repeat this 3
                     times for the same object positions and repeat this experiment
@@ -265,12 +272,21 @@
                     5mm) and about 2mm for the long textured metallic pin (the embossed features are very similar at intervals of 3.5 mm). This observation is consistent with the fact that the
                     final gradient descent step  to refine the camera based pose estimates will converge to the wrong local minima if the tactile measurements are not distinctive enough. 
                 </p>
+
+                <p style="text-align:center;">
+                    <image src="./img/random_touch.png" height="50px" class="img-responsive">
+                    </p>
+                   <p class = "text-justify">
+                    In this experiment we present the effect of randomly selected contacts for localization. For this set of experiments, we fix each of the objects and the black background plate used in experiments above to a graduated compound slide capable of in plane translation and rotation. We then moved the robot vertically down to make contact at the same location on the object used for the experiments reported in Table I to generate a starting pose. Next, we generated 5 random configurations per object in translation and orientation on the plane of the table and moved the robot vertically down to touch the object and attempted to recover the randomly generated pose perturbations we introduced. For each of the objects, as expected, we observed similar errors in localization using only vision as reported in Table I. For the box cutter most of the contacts yielded useful tactile signals so the errors in recovering the perturbations in pose were in the range reported in Table I -- i.e. \(\sim 8\)mm in translation and \(\sim 1.5^o\) in rotation. This observation was also consistent for the smaller textured objects (like the monkey, metallic in and the camera circuit). However, tactile sensing was not always helpful in localizing the objects -- for the glue gun and the folding knife, significant parts of the object were featureless and the tactile signals obtained when touched at these parts were unusable in localizing the objects as the final gradient descent step re-introduced localization errors of about \(\sim 3-4\) cm and \(15^o\) by converging to incorrect poses. In Table II, we provide a subset of the results of these experiments with possible causes behind the failures. 
+                   </p>
+
                 <p style="text-align:center;">
                     <image src="./img/small_flat_obj.png" height="35px" class="img-responsive">
                 </p>
                 <p style="text-align:center;">
                     <image src="./img/big_objs.png" height="35px" class="img-responsive">
                 </p>
+                <p style="text-align: center;"> Some tactile signals captured by our system and qualitative representation of the final result of our localization pipeline. </p>
 
             </div>
         </div> 
@@ -291,8 +307,8 @@
                     Acknowledgements
                 </h3>
                 <p class="text-justify">
-                We thank <a href="https://leonidk.com/"> Leonid Keselman </a>,  <a href="https://www.ri.cmu.edu/ri-faculty/oliver-kroemer/">Oliver Kroemer</a>, <a href="https://beisner.me/">Ben Eisner</a>, Arpit Agarwal and <a href="https://sites.google.com/view/rishiv/">Rishi Veerapaneni</a> for several constructive discussions and feedback on the manuscript. This research was partially funded by the NSF.
-                The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a>.
+                We thank <a href="https://leonidk.com/"> Leonid Keselman </a>,  <a href="https://www.ri.cmu.edu/ri-faculty/oliver-kroemer/">Oliver Kroemer</a>, <a href="https://beisner.me/">Ben Eisner</a>, <a href = 'https://www.andrew.cmu.edu/user/arpita1/'>Arpit Agarwal</a> and <a href="https://sites.google.com/view/rishiv/">Rishi Veerapaneni</a> for several constructive discussions and feedback on the manuscript. This research was partially funded by the NSF and the Toyota Research Institute.
+                The website template has been borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a>.
                 </p>
             </div>
         </div>
