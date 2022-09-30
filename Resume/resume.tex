@@ -63,6 +63,15 @@
     \end{tabular*}\vspace{-5pt}
 }
 
+\newcommand{\resumeSubheadingEight}[8]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+      \textbf{#5} & #6  \\
+      \textbf{\small#7} & \emph{\small #8} \\
+    \end{tabular*}\vspace{-5pt}
+}
 
 \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
 
@@ -92,7 +101,7 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {Carnegie Mellon University}{Pittsburg, PA}
-      {PhD in Computer Science (Robotics)}{Aug. 2020 -- Now} {}{}
+      {PhD in Computer Science (Robotics)}{Aug. 2020 -- Dec. 2023 (expected)} {}{}
       \vspace{-0.2 in}
       \resumeSubheading
       {Carnegie Mellon University}{Pittsburg, PA}
@@ -113,58 +122,58 @@
 \section{Experience}
   \resumeSubHeadingListStart
 
-    \resumeSubheading
+    \resumeSubheadingEight
       {Atkeson Lab \& Robotouch Lab, CMU RI}{Pittsburgh, PA}
       {Graduate Research Assistant}{ Nov. 2019 -- Present} {Advisor:}
-          {Prof. Christopher Atkeson }
+          {\href{https://www.cs.cmu.edu/~cga/}{Prof. Christopher Atkeson} }{Thesis topic:} {Active Sensing for Manipulation}
       \resumeItemListStart
-        \resumeItem{FingerVision II:}
-          {Developing FingerVision II -- an ensemble of collocated vision, depth and touch sensors and a set of algorithms to viually servo robots to workspace goals and localize objects through vision and touch. \href{https://arkadeepnc.github.io/projects/collocated_vision_touch/img/ICRA_RAL_Formatted-compressed.pdf}{ Link}}
-          \resumeItem{Active Lighting:}
-          {Developing a robot workspace scale shape-from-shading setup for object scale and articulation agnostic depth, normal and motion perception. [work in progress] }
+        \resumeItem{Moving cameras:}
+          {Developed an ensemble of collocated vision, depth and touch sensors and a set of algorithms to viually servo robots to workspace goals and localize objects through vision and touch. \href{https://arkadeepnc.github.io/projects/collocated_vision_touch}{ Link}}
+          \resumeItem{Moving lights:}
+          {Designed and implemented a robot workspace scale photometric stereo setup for prior free, object agnostic, surface texture, surface orientation, and surface deformation perception. \href{https://anonymousprojectsite.github.io/}{Work in progress} }
         \resumeItemListEnd
 
     \resumeSubheading
       {CI2CV Lab, CMU RI}{Pittsburgh, PA}
       {Graduate Research Assistant}{ July. 2019 -- Nov. 2019}  {Advisor:}
-          {Prof. Simon Lucey}
+          {\href{https://www.adelaide.edu.au/directory/simon.lucey}{Prof. Simon Lucey}}
       \resumeItemListStart
         \resumeItem{Learning Based Registration:}
-          {Researched learning based algorithms -- insights on why it works, what are the open problems.: \href{https://www.overleaf.com/read/jsjhbmspsjjq}{Short report}.}        
+          {Researched learning based pose estimation algorithms -- insights on why it works, what are the open problems.: \href{https://www.overleaf.com/read/jsjhbmspsjjq}{Short report}.}        
           \resumeItemListEnd
     \resumeSubheading
       {Biorobotics Lab, CMU RI}{Pittsburgh, PA}
       {Graduate Research Assistant}{ Aug. 2018 - Jul. 2019}  {Advisor:}
-          {Prof. Howie Choset}
+          {\href{https://www.cs.cmu.edu/~./choset/bio.html}{Prof. Howie Choset}}
       \resumeItemListStart
         \resumeItem{Medical device prototype:}
           {Co-developed and prototyped a hand held soft tissue investigation device for low-cost tumor diagnosis. \href{https://www.researchgate.net/publication/333968217_Hand-held_stiffness_measurement_device_for_tissue_analysis}{Link}}
       \resumeItem{Non-rigid registration:}
-          {Surveyed algorithms for human organ registration and proposed faster algorithms with comparable accuracy to handle larger volumes of data. \href{https://www.overleaf.com/read/ybdjnxzvtmwy}{Link}}
+          {Surveyed algorithms for human organ registration and proposed and implemented faster algorithms with comparable accuracy to handle larger volumes of data. \href{https://www.overleaf.com/read/ybdjnxzvtmwy}{Link}}
         
       \resumeItemListEnd
   \resumeSubheading
       {Robotics and Design Lab, IISc}{Bangalore, India}
       {Research Staff}{ Jan. 2018 - Jul. 2018}  {Advisor:}
-          {Prof. Ashitava Ghosal}
+          {\href{https://mecheng.iisc.ac.in/~asitava/}{Prof. Ashitava Ghosal}}
       \resumeItemListStart
         \resumeItem{Optimal Motion Planning:}
-          {Derived optimal, polynomial time motion plans for snake-like robots in confined spaces such as endoscopes, pipe inspection robots and robots in cluttered search and rescue scenarios. \href{https://www.sciencedirect.com/science/article/pii/S0010448518304135}{Link}}
+          {Derived optimal, polynomial time motion plans for snake-like robots in confined spaces such as endoscopes, pipe inspection robots and in cluttered search and rescue scenarios. \href{https://www.sciencedirect.com/science/article/pii/S0010448518304135}{Link}}
         
           \resumeItemListEnd
   \resumeSubheading
       {Robotics and Design Lab, IISc}{Bangalore, India}
       {Graduate Research Assistant}{ Jul. 2015 - Dec. 2017}  {Advisor:}
-          {Prof. Ashitava Ghosal}
+          {\href{https://mecheng.iisc.ac.in/~asitava/}{Prof. Ashitava Ghosal}}
       \resumeItemListStart
         \resumeItem{Design of Parallel Robots:}
-          {Designed Monte Carlo simulations to model workspaces of parallel robots. Modeled the human 3-fingered grasp and proposed techniques for optimal design of parallel robots. \href{https://www.researchgate.net/publication/327670588_Kinematic_Design_and_Optimal_Synthesis_of_Parallel_Manipulators_Using_Monte_Carlo_Method}{Thesis} }
+          {Designed Monte Carlo simulations to model workspaces of parallel robots. Modeled the human 3-fingered grasp and proposed techniques for optimal design of parallel robots. \href{https://www.researchgate.net/publication/327670588_Kinematic_Design_and_Optimal_Synthesis_of_Parallel_Manipulators_Using_Monte_Carlo_Method}{Thesis}, \href{https://www.sciencedirect.com/science/article/abs/pii/S0094114X16303184}{paper 1}, \href{https://asmedigitalcollection.asme.org/mechanismsrobotics/article-abstract/10/4/041003/366587/Workspace-of-Multifingered-Hands-Using-Monte-Carlo?redirectedFrom=fulltext}{paper 2}. }
         
           \resumeItemListEnd
 \resumeSubheading
       {Solid Mechanics Lab, IIEST}{ Kolkata, India}
       {Undergraduate Researcher}{Jul. 2014 - Apr. 2015}  {Advisor:}
-          {Prof. Debasis Datta}
+          {\href{https://www.iiests.ac.in/IIEST/Faculty/mech-ddatta}{Prof. Debasis Datta}}
       \resumeItemListStart
         \resumeItem{Computational Design of Springs:}
           {Formulated closed form expressions for design of springs of un-conventional shapes to estimate their stresses, natural frequencies, buckling loads etc. \href{https://www.sciencedirect.com/science/article/pii/S2288430016301385}{Link} }
@@ -175,7 +184,7 @@
 %-- Projects
 \section{Selected Course Projects}
 \resumeSubHeadingListStart
-\resumeSubItem{Planning on Manifolds:}{ Devised algorithms for path planning of collaborative robot arms to manipulate ultra-sound probes on a human body phantom. The algorithm may be used to automate femoral artery catheterization. [\href{https://drive.google.com/file/d/1MkV6iC-KX0RYu9jkbsk1KcqY43s-AwOh/view?usp=sharing}{Video}] }
+\resumeSubItem{Planning on Manifolds:}{ Devised algorithms for path planning of collaborative robot arms to manipulate ultra-sound probes on a human body phantom. This algorithm was lated used to research automatic femoral artery catheterization. [\href{https://drive.google.com/file/d/1MkV6iC-KX0RYu9jkbsk1KcqY43s-AwOh/view?usp=sharing}{Video}] }
 \resumeSubItem{SLAM for Legged Robots:} {Used GTSAM and OpenCV to co-develop a framework for visual state estimation in legged robots using their gait information. [\href{https://drive.google.com/file/d/1IkJY9AmxFcWgnp1tYTT9mZcW5MmxTrkQ/view?usp=sharing}{Report}]}
 \resumeSubHeadingListEnd
 
@@ -185,7 +194,7 @@
   \resumeSubHeadingListStart
   
     \resumeSubItem{[1]}
-      { \textbf{Chaudhury, A. N.}, Man, T.  Yuan, W. \& Atkeson, C. (2021) ``Using Collocated Vision and Tactile Sensors for Visual Servoing and Localization.'' \emph{IEEE RA-L 2022} \href{https://arkadeepnc.github.io/projects/collocated_vision_touch/img/ICRA_RAL_Formatted-compressed.pdf}{Link}}
+      { \textbf{Chaudhury, A. N.}, Man, T.  Yuan, W. \& Atkeson, C. (2022) ``Using Collocated Vision and Tactile Sensors for Visual Servoing and Localization.'' \emph{IEEE RA-L 2022} \href{https://arkadeepnc.github.io/projects/collocated_vision_touch/img/ICRA_RAL_Formatted-compressed.pdf}{Link}}
       
     \resumeSubItem{[2]}
       {Ashwin K.P., \textbf{Chaudhury A.N.}, and Ashitava Ghosal. (2020) ``Efficient representation of ducts and cluttered spaces for realistic motion planning of hyper-redundant robots through confined paths.''J. Computer-Aided Design, 119, 102777. \href{https://www.sciencedirect.com/science/article/pii/S0010448518304135}{Link}}
@@ -207,7 +216,7 @@
   \resumeSubHeadingListStart
     \resumeSubItem{Programming Languages:}      {Python, C++, CUDA, Cython }
     \resumeSubItem{Modelling Tools:}       {Matlab, Maple (Symbolic Mathematics)}
-    \resumeSubItem{Computing Environments:} {Ubuntu }
+    \resumeSubItem{Computing Environments:} {Linux [Ubuntu]}
     \resumeSubItem{Machine Learning Toolboxes:} {PyTorch, TensorFlow, SciKit-Learn}
     \resumeSubItem{Software Libraries:}{ROS, OpenCV, PCL, GTSAM}
     \resumeSubItem{Languages:}  {English (full proficiency), Bengali (native proficiency) and Hindi (bi-lingual proficiency)}
@@ -232,7 +241,7 @@
 %-----------------
 \section{Research Interests}
 \begin{description}
-\item Structured light 3D sensing, tactile sensing, computer vision for robot learning and manipulation.
+\item 3D sensing for manipulation, tactile sensing, active perception, computer vision for robot learning and manipulation.
 \vspace{-0.1 in}
 % \item[Sports:] Biking and badminton.
 \end{description}
@@ -242,13 +251,13 @@
 
 \section{References}
 \begin{description}
-  \item[Dr. Christopher Atkeson] Professor, CMU, \href{mailto:cga@cmu.edu}{cga@cmu.edu} [advisor]
+  \item[Dr. Christopher G. Atkeson] Professor, CMU, \href{mailto:cga@cmu.edu}{cga@cmu.edu} [advisor]
   \vspace{-0.1 in}
   % \item [Dr. Simon Lucey] Associate Research Professor, CMU, \href{mailto:slucey@cmu.edu}{slucey@cmu.edu}
   % \vspace{-0.1 in}
   \item[Dr. Ashitava Ghosal] Professor, IISc Bangalore.  \href{mailto:asitava@iisc.ac.in}{asitava@iisc.ac.in} [ex. advisor]
   \vspace{-0.1 in}
-  \item[Dr. Wenzhen Yuan] Assistant Professor, CMU RI, \href{mailto:yuanwz@cmu.edu}{yuanwz@cmu.edu} [collaborator]
+  \item[\href{http://robotouch.ri.cmu.edu/yuanwz/}{Dr. Wenzhen Yuan}] Assistant Professor, CMU RI, \href{mailto:yuanwz@cmu.edu}{yuanwz@cmu.edu} [collaborator]
   \end{description}
   % More referees are available upon request.
   
