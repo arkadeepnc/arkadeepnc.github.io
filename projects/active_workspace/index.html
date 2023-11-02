@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>ActiveWorkspace</title>
+
+    <!-- mirror: F0%9F%AA%9E&lt -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/codemirror.min.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <!-- <script src="js/video_comparison.js"></script> -->
+    <script src="js/app.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function compare() {
+          var x, i;
+          x = document.getElementsByClassName("img-comp-overlay");
+          for (i = 0; i < x.length; i++) {
+            compareImages(x[i]);
+          }
+          function compareImages(img) {
+            var slider, img, clicked = 0, w, h;
+            w = img.offsetWidth;
+            h = img.offsetHeight;
+            img.style.width = (w / 2) + "px";
+        
+            slider = document.createElement("DIV");
+            slider.setAttribute("class", "img-comp-slider");
+            img.parentElement.insertBefore(slider, img);
+            slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+            slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+            
+            slider.addEventListener("mousedown", slideReady);
+            window.addEventListener("mouseup", slideFinish);
+         
+            function slideReady(e) {
+              e.preventDefault();
+              clicked = 1;
+              window.addEventListener("mousemove", slideMove);
+              window.addEventListener("touchmove", slideMove);
+            }
+            function slideFinish() {
+              clicked = 0;
+            }
+            function slideMove(e) {
+              var pos;
+              if (clicked == 0) return false;
+              pos = getCursorPos(e)
+              if (pos < 0) pos = 0;
+              if (pos > w) pos = w;
+              slide(pos);
+            }
+            function getCursorPos(e) {
+              var a, x = 0;
+              e = (e.changedTouches) ? e.changedTouches[0] : e;
+              a = img.getBoundingClientRect();
+              x = e.pageX - a.left;
+              x = x - window.pageXOffset;
+              return x;
+            }
+            function slide(x) {
+              img.style.width = x + "px";
+              slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+            }
+          }
+        }
+            </script>
+
+</head>
+
+<body>
+    <div class="container" id="header" style="text-align: center; margin: auto;">
+        <div class="row" id="title-row" style="max-width: 100%; margin: 0 auto; display: inline-block">
+            <h2 class="col-md-12 text-center" id="title">
+                <!-- <b>PANDORA</b>: Polarization-Aided <br> Neural Decomposition Of Radiance<br> -->
+                Controlled illumination for perception and manipulation of Lambertian objects <br>
+                <small>
+                    (In Submission to RSS 2023)
+                </small>
+            </h2>
+        </div>
+        <div class="row" id="author-row" style="margin:0 auto;">
+            <div class="col-md-12 text-center" style="display: table; margin:0 auto">
+                <table class="author-table" id="author-table">
+                    <tr>
+                        <td>
+                            <a style="text-decoration:none" href="https://akshatdave.github.io">
+                              Arkadeep Narayan Chaudhury
+                        </td>
+                        <td>
+                            <a style="text-decoration:none" href="https://leonidk.com/">
+                              Leonid Keselman
+                        </td>
+                        <td>
+                            <a style="text-decoration:none" href="https://cs.cmu.edu/~cga">
+                             Christopher G. Atkeson
+                        </td>
+                    </tr>
+                    <!-- Anonymous authors. Paper ID 23 -->
+                </table>
+            </div>
+            <div class="col-md-12 text-center" style="display: table; margin:0 auto">
+                <table class="author-table" id="uni-table">
+                    <tr>
+                        <td>
+                            <!-- <a style="text-decoration:none" href="https://computationalimaging.rice.edu"> Computational Imaging Lab, Rice University </a> -->
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- <script>
+        document.getElementById('author-row').style.maxWidth = document.getElementById("title-row").clientWidth + 'px';
+    </script> -->
+
+    
+    <div class="container">
+        <div class="row">
+                <div class="col-md-3 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="./img/RSS_2023_paper_ID_23.pdf">
+                            <img src="./img/pdf.png" height="50px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li> 
+                            <a href="https://drive.google.com/file/d/1Plxt6LY8L6hpYtLvQlYKjpBspTXi58Kr/preview">
+                                <img src="./img/video.png" height="50px"> 
+                                 <h4><strong>Video</strong></h4>
+                            </a>
+                        </li>
+                        <!-- <li>
+                                <a href="https://github.com/akshatdave/pandora">
+                                <img src="./img/code_icon.png" height="50px"> 
+                                <font size="-1">(Coming Soon)</font> <br> 
+                                <h4><strong>Code</strong></h4> 
+                                <h5> Coming soon </h5> 
+                                </a>
+                        </li> -->
+
+                    </ul>
+                </div>
+        </div>
+    </div>
+
+<p>     </p>
+<p>     </p>
+<p>     </p>
+<p>     </p>
+
+<div class="container">    
+    <h1>
+        Abstract
+    </h1> 
+    <div class="row">
+    <div class="col-md-8  ">
+                <img src="./img/workspace_schematic_NEW.png" alt="AltText" class="img-responsive">
+                <!-- <img src="./img/workspace_schematic_NEW.png" alt="AltText" style="width: 771px;;height: 578px;"> -->
+    </div>
+    <div class=" col-md-4 ">
+        <div class="p-3 border bg-light"></div>
+        <div>
+            <div class="row">
+                <img src="./img/sfs_bas_relief.gif" alt="AltText"  style="width:280px;height:280px;">
+            </div>
+            <p>     </p>
+            <p>     </p>
+            <div class="row">
+                <img src="./img/sfs_images_star.gif" alt="AltText"  style="width:280px;height:280px;">
+            </div>
+        </div>        
+    </div>
+   </div>
+</div>
+<p>     </p>
+<p>     </p>
+<div class="container">    
+    <div class="row">
+    <div class="col-md-8  ">
+        <h4>
+           Schematic of our setup. We have seven lights (\(L_1\) to  \( L_7\)) and two cameras (\(C_1\) and  \( C_2\))
+        </h4>
+    </div>
+    <div class=" col-md-4 ">
+        <div class="p-3 border bg-light"></div>
+        <div>
+            <h4>We capture directionally illuminated images </h4>
+            
+        </div>        
+    </div>
+   </div>
+</div>
+<p>     </p>
+<p>     </p>
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-3  ">
+                <img src="./img/bas_relief.objnormal_src.png" style="width:280px;height:280px;">
+    </div>
+    <div class=" col-md-3 ">
+        <div class="sketchfab-embed-wrapper"> <iframe title="IRLS_Bas_relief" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="280" height="280" src="https://sketchfab.com/models/b9633dedab41424ea0291d079526802e/embed?ui_theme=dark"> </iframe> </div>
+    </div>
+    <div class="col-md-3  ">
+        <img src="./img/sfs_normal_star.png" style="width:280px;height:280px;">
+    </div>
+    <div class=" col-md-3 ">
+        <div class="sketchfab-embed-wrapper"> <iframe title="Star_scanned" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="280" height="280" src="https://sketchfab.com/models/7085558c5b2349658e0f9e69a335db3d/embed?ui_theme=dark"> </iframe> </div>
+    </div>
+</div>
+</div> 
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-3  ">
+            <h4>
+                Normals of the bas relief
+            </h4> 
+    </div>
+    <div class=" col-md-3 ">
+        <h4>
+            Surface reconstruction of the bas relief
+        </h4> 
+    </div>
+    <div class="col-md-3  ">
+        <h4>
+            Normals of the star
+        </h4> 
+    </div>
+    <div class=" col-md-3 ">
+        <h4>
+            Surface reconstruction of the star
+        </h4> 
+    </div>
+</div>
+</div> 
+<p>     </p>
+<p>     </p>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+        <!-- <image src="img/opening_fig.png" class="img-responsive" alt="overview"><br> -->
+        <p class="text-justify ">
+            Controlling illumination can generate high quality information about object surface normals and depth discontinuities at a low computational cost. In this work we demonstrate a robot workspace-scaled controlled illumination setup that generates high quality information for table top scale objects for robotic manipulation. With our low angle of incidence directional illumination setup we can precisely capture surface normals and depth discontinuities of Lambertian objects. We demonstrate three use cases of our setup for robotic manipulation. We show that 1) by using the captured information we can perform general purpose grasping with a single point vacuum gripper, 2) we can visually measure the deformation of known objects, and 3) we can estimate pose of known objects and track unknown objects in the robot's workspace. 
+        </p>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h2>
+            Narrated summary
+        </h2>
+        <div class="text-center">
+            <div style="position:relative;padding-top:56.25%;">
+                <!-- <iframe src="https://drive.google.com/file/d/1Plxt6LY8L6hpYtLvQlYKjpBspTXi58Kr/preview" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe> -->
+                <iframe src="https://drive.google.com/file/d/1Plxt6LY8L6hpYtLvQlYKjpBspTXi58Kr/preview" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" allow="autoplay"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h2>
+            Slides with our results
+        </h2>
+        <div class="text-center">
+            <div style="position:relative;padding-top:56.25%;">
+                <!-- <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTF8WNl8sdtoORXmqUvMbZ3P7SdG8ZqLD58cc56kIGrCCDPW2r79ZOBfRFFjSklwYoljHUeBczknIJD/embed?start=false&loop=false&delayms=15000" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%; mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> -->
+                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQbra-vQUo3AxtwsgdChHOLTZ_PCTdbt-G2QBSEjywH1FgsLSDQX81t_lq8heY1kNgs8U2WnV7qVCpc/embed?start=false&loop=false&delayms=3000"  allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%"; mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<p>     </p>
+<p>     </p>
+
+<p>     </p>
+<p>     </p>
+
+<div class="row">
+    <div class="col-md-5 col-md-offset-3">
+        <h2>
+            Demonstration of the data captured and processed using our setup
+        </h2>
+    </div>
+</div>
+
+<!-- column labels  -->
+<div class="container">
+    <div class="row">
+    <div class="col-md-3  ">     
+        <h3>
+            Directionally illuminated images
+        </h3> 
+    </div>
+    <div class=" col-md-3 ">
+        <h3>
+            Normal map
+        </h3>        
+    </div>
+    <div class=" col-md-3 ">
+        <h3>
+            Surface reconstruction
+        </h3> 
+    </div>
+    <div class=" col-md-3 ">
+        <h3>
+            Depth edges overlaid on images
+        </h3> 
+
+    </div>
+    </div>
+</div>
+
+
+<!-- BUNNY -->
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-3  ">
+                <img src="./img/sfs_images_bunny.gif" alt="AltText" class="img-responsive">
+    </div>
+    <div class=" col-md-3 ">
+        <img src="./img/sfs_normals_bunny.png" alt="AltText" class="img-responsive">
+    </div>
+    <div class=" col-md-3 ">
+        <div class="sketchfab-embed-wrapper"> <iframe title="Stanford_bunny" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="280" height="280" src="https://sketchfab.com/models/01294a342307436e9bc873c6aa546db6/embed"> </iframe> </div>
+    </div>
+    <div class=" col-md-3 ">
+            <div class="img-comp-container">
+                    <div class="img-comp-img">
+                      <img src="./img/sfs_edges_bunny_half_scale.png" width="278" height="280">
+                    </div>
+                    <div class="img-comp-img img-comp-overlay">
+                      <img src="./img/sfs_images_bunny_half_scale.gif" width="278" height="280">
+                    </div>
+                <!-- <script>
+                    /*Execute the Function*/
+                    compare();  
+                </script> -->
+            </div>
+        </div>
+    </div>
+</div>
+    
+<p class="br3"></p>
+
+<!-- text Pyr -->
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-3  ">
+                <img src="./img/sfs_images_textured_pyr.gif" alt="AltText" class="img-responsive">
+    </div>
+    <div class=" col-md-3 ">
+        <img src="./img/sfs_normals_textured_pyr.png" alt="AltText" class="img-responsive">
+    </div>
+    <div class=" col-md-3 ">
+        <div class="sketchfab-embed-wrapper"> <iframe title="scanned_textured_pyramid" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="280" height="280" src="https://sketchfab.com/models/21b8ec1e270a42f98ef45d938dad71cb/embed?ui_theme=dark"> </iframe> </div>
+    </div>
+    <div class=" col-md-3 ">
+            <div class="img-comp-container">
+                    <div class="img-comp-img">
+                      <img src="./img/sfs_edges_textured_pyr_half_scaled.png" width="295" height="280">
+                    </div>
+                    <div class="img-comp-img img-comp-overlay">
+                      <img src="./img/sfs_images_textured_pyr_half_scaled.gif" width="295" height="280">
+                    </div>
+                <!-- <script>
+                    /*Execute the Function*/
+                    compare();  
+                </script> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<p class="br3"></p>
+
+
+<!-- monkey -->
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-3  ">
+                <img src="./img/sfs_images_monkey.gif" alt="AltText" class="img-responsive">
+    </div>
+    <div class=" col-md-3 ">
+        <img src="./img/monkey_normals.png" alt="AltText" class="img-responsive">
+    </div>
+    <div class=" col-md-3 ">
+        <div class="sketchfab-embed-wrapper"> <iframe title="PerspectivePoissonMonkey" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="280" height="220" src="https://sketchfab.com/models/c27f800f71a84b58ad9e22319adc5e71/embed?ui_theme=dark"> </iframe> </div>
+    </div>
+    <div class=" col-md-3 ">
+            <div class="img-comp-container">
+                    <div class="img-comp-img">
+                      <img src="./img/sfs_images_monkey_half_scaled.gif" width="300" height="224">
+                    </div>
+                    <div class="img-comp-img img-comp-overlay">
+                      <img src="./img/monkey_edges_half_scaled.png" width="300" height="224">
+                    </div>
+                <!-- <script>
+                    /*Execute the Function*/
+                    compare();  
+                </script> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<p class="br3"></p>
+
+
+<!-- BUDDHA -->
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-3  ">
+                <img src="./img/buddha_sfs.gif" alt="AltText" class="img-responsive">
+    </div>
+    <div class=" col-md-3 ">
+        <img src="./img/buddha_normals.png" alt="AltText" class="img-responsive">
+    </div>
+    <div class=" col-md-3 ">
+        <div class="sketchfab-embed-wrapper"> <iframe title="Buddha_IRLS" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="280" height="450" src="https://sketchfab.com/models/517fde9e470d46109663d9a455245831/embed?ui_theme=dark"> </iframe> </div>
+    </div>
+    <div class=" col-md-3 ">
+            <div class="img-comp-container">
+                    <div class="img-comp-img">
+                      <img src="./img/buddha_sfs_scaled.gif" width="262" height="450">
+                    </div>
+                    <div class="img-comp-img img-comp-overlay">
+                      <img src="./img/buddha_edges_scaled.png" width="262" height="450">
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<p class="br3"></p>
+
+
+<p class="text-center"><strong></strong> </p>
+<p style="text-align:center;font-size:x-large;"> Some more single view 3D reconstructions from our pipeline. </p>
+
+<p>     </p>
+<p>     </p>
+
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-3  ">
+        <div class="sketchfab-embed-wrapper"> <iframe title="Circular Pattern" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="280" height="280" src="https://sketchfab.com/models/50ca44982be54044ad390df6f8a64e70/embed?ui_theme=dark"> </iframe> </div>
+    </div>
+    <div class=" col-md-3 ">
+        <div class="sketchfab-embed-wrapper"> <iframe title="octagon_loft_no_twist" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="280" height="280" src="https://sketchfab.com/models/04ade06611cc4a38b155c28ef851bd45/embed?ui_theme=dark"> </iframe> </div>
+    </div>
+    <div class=" col-md-3 ">
+        <div class="sketchfab-embed-wrapper"> <iframe title="twisted_octagon" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="280" height="280" src="https://sketchfab.com/models/68bdcc786aca480a87977c78a7d12b24/embed?ui_theme=dark"> </iframe> </div>
+    </div>
+    <div class=" col-md-3 ">
+        <div class="sketchfab-embed-wrapper"> <iframe title="Spot" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="280" height="280" src="https://sketchfab.com/models/88f2daa3ffba41d4b0d87c7ea7e8bfe4/embed?ui_theme=dark"> </iframe> </div>
+        </div>
+    </div>
+</div>
+
+
+<p>     </p>
+<p>     </p>
+
+<p class="text-center"><strong></strong> </p>
+<p style="text-align:center;font-size:larger;"> Comparison between ground truth . </p>
+
+<p>     </p>
+<p>     </p>
+
+    
+
+<div class="row">
+    <div class="col-md-5 col-md-offset-3">
+        <h2>
+            Demonstration of picking up tasks using our setup
+        </h2>
+        <h3>
+            We could pick up objects with arbitrarily oriented pickable faces.
+        </h3>
+        
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-6  ">
+        <iframe src="https://drive.google.com/file/d/1bsYlmZ8yqL8HOp48eWWbog_31sca6GQN/preview" width="580" height="400" allow="autoplay"></iframe>
+    </div>
+    <div class=" col-md-6 ">
+        <iframe src="https://drive.google.com/file/d/1KES0bznjq-xAzwAfgrgSr7vM2g2mhVNP/preview" width="580" height="400" allow="autoplay"></iframe>
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-6  ">
+        <iframe src="https://drive.google.com/file/d/1sfjBBohKaW6siKldmdF5qW2oa5HoZ2bB/preview" width="580" height="400" allow="autoplay"></iframe>
+    </div>
+    <div class=" col-md-6 ">
+        <iframe src="https://drive.google.com/file/d/1pWVL4vfvFGIy1ixQfcbvIspIbYEhWkUe/preview" width="580" height="400" allow="autoplay"></iframe>
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-6  ">
+        <iframe src="https://drive.google.com/file/d/1jxxdAr7e9TxQ_ZG7MJ_ILpFMTZw_MgFT/preview" width="580" height="400" allow="autoplay"></iframe>
+    </div>
+    <div class=" col-md-6 ">
+        <iframe src="https://drive.google.com/file/d/1GmhQQ7FtYeaLETVjtpWNImMxojsXZrXJ/preview" width="580" height="400" allow="autoplay"></iframe>
+    </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-5 col-md-offset-3">
+        <h3>
+            We could also pick up camouflaged objects
+        </h3>
+        
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class=" col-md-6 ">
+            <iframe src="https://drive.google.com/file/d/1hM3pmliAK2DTGIuZHtXtZHtZ182_Jx8q/preview" width="580" height="400" allow="autoplay"></iframe>
+        </div>
+    <div class="col-md-6  ">
+        <iframe src="https://drive.google.com/file/d/12gUjRbQjouHLoBGCQwPU3YYoSXOONt5i/preview" width="580" height="400" allow="autoplay"></iframe>
+    </div>
+    </div>
+</div>
+
+<p style="text-align:center;font-size:larger;"> The robot demonstrations have not been sped up. </p>
+<p>     </p>
+<p>     </p>
+
+
+
+<p>     </p>
+<p>     </p>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h3> Comparison between ground truth and measured normals</h3>
+        <h4>
+         The ground truth and the recovered normals are overlaid below. We register the objects to the ground truth meshes with maximum errors of upto 5 pixels (@ ~8 pixels/mm) using the pipeline described in the paper. Our multi-model pose estimation pipeline was robust to recovered data even with 50% of the pixels having a error of \(20^o\) or more in estimating local normals and upto 3mm of local warp due to 3D printing.
+        </h4>
+        
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+    <div class=" col-md-4 ">
+            <div class="img-comp-container">
+                    <div class="img-comp-img">
+                      <img src="./img/kisses_twisted.objnormal_rendered_cropped.png" width="385" height="393">
+                    </div>
+                    <div class="img-comp-img img-comp-overlay">
+                      <img src="./img/kisses_twisted.objnormal_src_cropped.png" width="385" height="393">
+                    </div>
+
+            </div>
+        </div>
+        <div class=" col-md-4 ">
+            <div class="img-comp-container">
+                    <div class="img-comp-img">
+                      <img src="./img/spot.objnormal_rendered.png" width="385" height="303">
+                    </div>
+                    <div class="img-comp-img img-comp-overlay">
+                      <img src="./img/spot.objnormal_src.png" width="385" height="303">
+                    </div>
+            </div>
+        </div>
+        <div class=" col-md-4 ">
+            <div class="img-comp-container">
+                    <div class="img-comp-img">
+                      <img src="./img/star.objnormal_rendered.png" width="385" height="380">
+                    </div>
+                    <div class="img-comp-img img-comp-overlay">
+                      <img src="./img/star.objnormal_src.png" width="385" height="380">
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<p class="br30"></p>
+
+
+<div class="container">
+    <div class="row">
+    <div class=" col-md-4 ">
+            <div class="img-comp-container">
+                    <div class="img-comp-img">
+                      <img src="./img/kisses.objnormal_rendered.png" width="385" height="391">
+                    </div>
+                    <div class="img-comp-img img-comp-overlay">
+                      <img src="./img/kisses.objnormal_src.png" width="385" height="391">
+                    </div>
+
+            </div>
+        </div>
+        <div class=" col-md-4 ">
+            <div class="img-comp-container">
+                    <div class="img-comp-img">
+                      <img src="./img/bunny_cut.objnormal_rendered.png" width="385" height="454">
+                    </div>
+                    <div class="img-comp-img img-comp-overlay">
+                      <img src="./img/bunny_cut.objnormal_src.png" width="385" height="454">
+                    </div>
+
+            </div>
+        </div>
+        <div class=" col-md-4 ">
+            <div class="img-comp-container">
+                    <div class="img-comp-img">
+                      <img src="./img/buddha_cut.objnormal_rendered_better.png" width="385" height="658">
+                    </div>
+                    <div class="img-comp-img img-comp-overlay">
+                      <img src="./img/buddha_cut.objnormal_src_better.png" width="385" height="658">
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<p class="br50"></p>
+
+<!-- pose est movies -->
+<div class="row">
+    <div class="col-md-5 col-md-offset-3">
+        <h2>
+            Pose estimation
+        </h2>
+
+        <p class="text-justify ">
+                <h4>
+            With the object mask, depth edges and surface normals measured with our setup, we could align objects at sub-5-pixels at a resolution of 7.5 pixels/mm. Resulting pose estimation errors are sub millimeter and sub \(0.5^o\). We present some results below where the object normals captured with our setup has been overlaid on the ground truth (mesh) normals after registering the two. 
+        </h4>
+        </p>
+        
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-3  ">
+                <img src="./img/text_pyramid_pose_est.gif" alt="AltText" class="img-responsive">
+    </div>
+    <div class=" col-md-3 ">
+        <img src="./img/bunny_pose_est.gif" alt="AltText" class="img-responsive">
+    </div>
+
+    <div class=" col-md-3 ">
+        <img src="./img/real_demo_large_basin_of_attraction.gif" alt="AltText" class="img-responsive">
+    </div>
+
+    <div class=" col-md-3 ">
+        <img src="./img/pose_est_demo_bas_relief.gif" alt="AltText" class="img-responsive">
+    </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-5 col-md-offset-3">
+        <h3> Demonstration of our deformation estimation pipeline</h3>
+        <h4>
+        We estimated the shapes of known objects under deformation
+        </h4>
+        
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+
+    <div class="col-md-4  ">
+                <img src="./img/card_bending_gif.gif" width="385" height="454">
+    </div>
+
+    <div class=" col-md-4 ">
+        <img src="./img/card_bending_6_12_mm.gif" width="385" height="454">
+    </div>
+
+    <div class=" col-md-4 ">
+        <img src="./img/card_bending_6_16_mm.gif" width="385" height="454">
+    </div>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+
+    <div class="col-md-4  ">
+        <h4>
+            Five 1 mm vertical deformation steps
+        </h4>  
+    </div>
+
+    <div class=" col-md-4 ">
+        <h4>
+            Mesh curvature overlaid on view from \(C_1\)
+        </h4>  
+    </div>
+
+    <div class=" col-md-4 ">
+        <h4>
+            Mesh curvature overlaid on view from \(C_2\)
+        </h4>  
+    </div>
+
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-5 col-md-offset-3">
+        <h4>
+       Reconstructed meshes at 1mm, 3mm and 5mm vertical deformations. 
+        </h4>
+       
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class=" col-md-10 ">
+            <div class="sketchfab-embed-wrapper"> <iframe title="all_bent_meshes" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="1100" height="480" src="https://sketchfab.com/models/23e73d1fd3de4a08a699b7de98bcaa3a/embed?ui_theme=dark"> </iframe> </div>
+        </div>
+       
+    </div>
+</div>
+
+
+
+<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr>
+        <td style="padding:0px">
+            <br>
+            <p style="text-align:center;font-size:small;">
+            The source code and design of this webpage is adapted from <a href="https://dorverbin.github.io/refnerf/"> Ref-NeRF project page</a>. We would like to thank the authors for the inspiration.
+            </p>
+        </td>
+        </tr>
+</tbody></table>
+</div>
+
+
+
+<script>
+    /*Execute the Function*/
+    compare();  
+</script>
+
+
+</body></html>
+
+
