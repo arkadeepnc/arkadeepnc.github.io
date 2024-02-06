@@ -56,7 +56,55 @@
         </tbody></table>
 
 
-        
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr onmouseout="collocated_vision_stop()" onmouseover="collocated_vision_start()">
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id='collocated_vision_image'><video  width=120% height=120% muted autoplay loop>
+                  <source src="images/stereoMFC.png" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                  <img src='images/stereoMFC.png' width="160">
+                </div>
+                <script type="text/javascript">
+                  function collocated_vision_start() {
+                    document.getElementById('collocated_vision_image').style.opacity = "1";
+                  }
+  
+                  function collocated_vision_stop() {
+                    document.getElementById('collocated_vision_image').style.opacity = "0";
+                  }
+                  CAD_paper_stop()
+                </script>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle">
+                <a href="">
+                <papertitle> A multi-flash stereo camera for photorealistic capture of small scenes   </papertitle>
+                </a>
+                <br>
+                <strong> Anonymous authors </strong>
+                <!-- <a href="https://leonidk.com/"> Leonid Keselman </a>,  -->
+                <!-- <a href="https://www.cs.cmu.edu/~cga/"> Christopher Atkeson</a>,  -->
+                <br>
+                <!-- <em>Accepted to WACV '24</em>  -->
+                <br>
+                
+                <a href="https://stereomfc.github.io"> Project </a>
+                
+                <!-- <a href=""> Extended Abstract </a> -->
+                <p></p>
+                
+                <p>  We demonstrate a robot mounted multi-flash stereo camera for generating photorealistic, portable representations of small scenes. More details coming soon.
+                </p>
+              </td>
+
+
+
+        </tbody></table>
+
+        <!-- WACV paper -->
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
@@ -101,9 +149,9 @@
                 </p>
               </td>
 
-
-
         </tbody></table>
+
+        <!-- RAL paper -->
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
